@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTour Brasil - Turismo Sustentável</title>
+    <link rel="stylesheet" href="styles( da ap1 parte 2).css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>EcoTour Brasil</h1>
+            <p>Turismo Sustentável</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#pacotes">Pacotes</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="pacotes">
+            <h2>Nossos Pacotes Turísticos</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Destino</th>
+                            <th>Duração</th>
+                            <th>Preço</th>
+                            <th>Destaques</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Amazônia Sustentável</td>
+                            <td>5 dias</td>
+                            <td>R$ 1.200</td>
+                            <td>Passeio de barco, observação de animais</td>
+                        </tr>
+                        <tr>
+                            <td>Chapada Diamantina</td>
+                            <td>4 dias</td>
+                            <td>R$ 980</td>
+                            <td>Cachoeiras, trilhas ecológicas</td>
+                        </tr>
+                        <tr>
+                            <td>Pantanal Ecológico</td>
+                            <td>6 dias</td>
+                            <td>R$ 1.500</td>
+                            <td>Safári fotográfico, observação de aves</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="reserva">
+            <h2>Reserve sua Viagem</h2>
+            <form id="form-reserva">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" required placeholder="(99) 99999-9999">
+                </div>
+
+                <div class="form-group">
+                    <label for="pacote">Pacote de Interesse</label>
+                    <select id="pacote" name="pacote" required>
+                        <option value="">Selecione um pacote</option>
+                        <option value="amazonia">Amazônia Sustentável</option>
+                        <option value="chapada">Chapada Diamantina</option>
+                        <option value="pantanal">Pantanal Ecológico</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="pessoas">Número de Pessoas</label>
+                    <input type="number" id="pessoas" name="pessoas" required min="1">
+                </div>
+
+                <button type="submit">Enviar Solicitação</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 EcoTour Brasil - Turismo Sustentável</p>
+        <p>Contato: contato@ecotourbrasil.com.br</p>
+    </footer>
+</body>
+
+</html>

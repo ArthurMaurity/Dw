@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauritours - A sua empresa de turismo</title>
+</head>
+
+<body>
+
+    <body>
+        <header>
+            <h1>Mauritours</h1>
+            <nav aria-label="Navegação pelo site">
+                <ul>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#destinos">Destinos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="servicos" aria-labelledby="servicos-titulo">
+                <h2 id="servicos-titulo">Nossos Serviços</h2>
+                <p>Pacotes de viagens com os destinos mais procurados no Brasil</p>
+            </section>
+            <section id="destinos" aria-labelledby="destinos-titulo">
+                <h2 id="destinos-titulo">Destinos mais Populares</h2>
+                <ul>
+                    <li>Fernando de Noronha - Praias paradisíacas e mergulho inesquecível.</li>
+                    <li>Centro Histórico de Ouro Preto - Turismo Histórico repleto de cultura e charme em Minas Gerais.
+                    </li>
+                    <li>Cataratas do Iguaçu - Ecoturismo deslumbrante e Turismo cultural com raízes externas dos
+                        imigrantes da região.</li>
+                </ul>
+            </section>
+            <section id="contato" aria-labelledby="contato-titulo">
+                <h2 id="contato-titulo">Contate-nos</h2>
+                <form action="/enviar-mensagem" method="POST">
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required aria-required="true">
+                    </div>
+
+                    <div>
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                    </div>
+
+                    <div>
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required aria-required="true"></textarea>
+                    </div>
+
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Viajar Mais - Todos os direitos reservados</p>
+        </footer>
+    </body>
+
+</html>
