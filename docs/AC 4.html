@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling with CSS Activity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            font-size: 32px;
+            margin: 0 0 20px;}
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin: 0 0 10px;
+        }
+        a {
+            color: #dd0303;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            margin: 0 0 20px;
+            padding: 0;
+            list-style: none;
+        }
+        li {
+            margin: 0 0 10px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 0 0 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Page</h1>
+        <p>This is a brief introduction about the page.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>About Me</h2>
+            <p>My name is Jane Doe and I'm a web developer from New York. I love creating responsive and interactive websites and i love Zico. In my free time, I enjoy hiking, reading, and exploring new cafes in the city.</p>
+            <img src="data:image/jpeg;base64,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" alt="A placeholder image of Jane Doe">
+        </section>
+
+        <section>
+            <h2>My Favorite Books</h2>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/The_Great_Gatsby">The Great Gatsby</a> by F. Scott Fitzgerald</li>
+                <li><a href="https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird">To Kill a Mockingbird</a> by Harper Lee</li>
+                <li><a href="https://en.wikipedia.org/wiki/Nineteen_Eighty-Four">1984</a> by George Orwell</li>
+                <li><a href="https://en.wikipedia.org/wiki/Pride_and_Prejudice">Pride and Prejudice</a> by Jane Austen</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 by Jane Doe. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
