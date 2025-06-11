@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- Define o tipo de documento como HTML5, a versão mais recente do HTML. -->
+<html lang="pt-BR">
+<!-- A tag raiz do documento. O atributo 'lang' especifica que o idioma da página é o português do Brasil. -->
+<head>
+    <!-- Contém metadados, links para folhas de estilo e scripts, que não são visíveis na página. -->
+    <meta charset="UTF-8">
+    <!-- Define o conjunto de caracteres como UTF-8, que suporta a maioria dos caracteres e símbolos. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Uma tag crucial para o design responsivo. Garante que a página se ajuste à largura da tela do dispositivo. -->
+    <title>Simulador de Investimentos | Slides</title>
+    <!-- O título que aparece na aba do navegador. -->
+
+    <!-- --- IMPORTAÇÃO DE FONTES E ÍCONES EXTERNOS --- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Importa as fontes 'Lato' e 'Poppins' do Google Fonts para serem usadas no CSS. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <!-- Importa a biblioteca Font Awesome, que permite usar ícones (como o de gráfico e arquivo). -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Importa a biblioteca Chart.js, que será usada pelo JavaScript para criar os gráficos. -->
+
+    <!-- --- VÍNCULO COM ARQUIVOS LOCAIS --- -->
+    <link rel="stylesheet" href="styleap2.css">
+    <!-- Link para a sua folha de estilos CSS, que define toda a aparência da página. -->
+    <script src="scriptap2.js" defer></script>
+    <!-- Link para o seu arquivo JavaScript. O atributo 'defer' garante que o script só seja executado após o HTML ser totalmente carregado. -->
+</head>
+<body>
+    <!-- O corpo do documento, onde todo o conteúdo visível da página é colocado. -->
+
+    <!-- --- CABEÇALHO DA PÁGINA --- -->
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <!-- O container ajuda a centralizar o conteúdo. Os estilos inline criam um layout flexível para o cabeçalho. -->
+            <h1><i class="fa-solid fa-chart-line"></i> Maurinvest</h1>
+            <!-- O título principal do site. O '<i>' é um ícone do Font Awesome. -->
+            <nav>
+                <!-- A tag de navegação, que agrupa os links principais do site. -->
+                <ul style="list-style: none; display: flex;">
+                    <!-- Lista de links. Os 'id's (ex: 'link-simulador') são essenciais para que o JavaScript saiba em qual link o usuário clicou. -->
+                    <li style="margin-left: 20px;"><a href="#" id="link-simulador" style="color: white; text-decoration: none;">Simulador</a></li>
+                    <li style="margin-left: 20px;"><a href="#" id="link-dados" style="color: white; text-decoration: none;">Dados Econômicos</a></li>
+                    <li style="margin-left: 20px;"><a href="#" id="link-investimentos" style="color: white; text-decoration: none;">Investimentos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- --- CONTEÚDO PRINCIPAL DA PÁGINA --- -->
+    <main class="container">
+        
+        <!-- --- SEÇÃO DO QUESTIONÁRIO (SLIDES) --- -->
+        <!-- Esta é a primeira seção visível para o usuário. -->
+        <section id="questionario-section">
+            <h2>Descubra seu Perfil de Investidor</h2>
+            <p>Responda às perguntas para ver seu relatório.</p>
+            
+            <div id="slides-container">
+                <!-- Este container agrupa todas as perguntas (slides) do questionário. -->
+                <div class="slide active">
+                    <!-- Cada 'div.slide' é uma etapa. A classe 'active' (controlada pelo JS) define qual está visível. -->
+                    <h3>Pergunta 1 de 2</h3>
+                    <label for="nome">Qual o seu nome?</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite apenas seu nome" required>
+                </div>
+
+                <div class="slide">
+                    <!-- Segunda pergunta, inicialmente oculta. -->
+                    <h3>Pergunta 2 de 2</h3>
+                    <p>Você prefere segurança ou aceita riscos por maiores retornos?</p>
+                    <div class="options">
+                        <!-- 'input type="radio"' permite que apenas uma opção seja selecionada. -->
+                        <label><input type="radio" name="risco" value="Conservador" required> Prefiro segurança total.</label>
+                        <label><input type="radio" name="risco" value="Moderado"> Aceito um pouco de risco.</label>
+                        <label><input type="radio" name="risco" value="Arrojado"> Busco o maior retorno, mesmo com riscos.</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-navigation">
+                <!-- Contém os botões para navegar entre os slides do questionário. -->
+                <button id="prev-btn" disabled>Anterior</button>
+                <button id="next-btn">Próximo</button>
+                <button id="finish-btn" style="display:none;">Ver Relatório</button>
+            </div>
+        </section>
+
+        <!-- --- SEÇÃO DO RELATÓRIO --- -->
+        <!-- Esta seção começa oculta ('display: none;') e só aparece após o usuário finalizar o questionário. -->
+        <section id="relatorio-section" style="display: none;">
+            <h2><i class="fa-solid fa-file-invoice"></i> Seu Relatório</h2>
+            <div id="resultado-texto"></div>
+            <!-- Este 'div' vazio será preenchido pelo JavaScript com o texto personalizado do relatório. -->
+            <div class="chart-container">
+                <h3>Comparativo de Ativos (Cotação Atual em R$)</h3>
+                <canvas id="investimentoChart"></canvas>
+                <!-- O elemento 'canvas' é uma área de desenho onde o JavaScript (com a biblioteca Chart.js) criará o gráfico. -->
+            </div>
+        </section>
+
+        <!-- --- SEÇÕES ADICIONAIS --- -->
+        <!-- Estas seções também começam ocultas e são exibidas quando o usuário clica nos links da navegação. -->
+        <section id="dados-economicos-section" style="display: none;">
+            <h2><i class="fa-solid fa-table-list"></i> Dados Econômicos</h2>
+            <p>Tabela com as cotações principais e índices econômicos</p>
+            <div id="tabela-dados-container"></div>
+            <!-- Este 'div' vazio será preenchido pelo JavaScript com uma tabela de dados buscados na API. -->
+        </section>
+
+        <section id="investimentos-section" style="display: none;">
+            <h2><i class="fa-solid fa-seedling"></i>Tipos de investimentos</h2>
+            <p>Uma breve descrição sobre invesmitentos</p>
+            <div id="tabela-investimentos-container"></div>
+            <!-- Este 'div' vazio será preenchido pelo JavaScript com uma tabela de informações sobre investimentos. -->
+        </section>
+    </main>
+
+    <!-- --- RODAPÉ DA PÁGINA --- -->
+    <footer>
+        <div class="container" style="text-align: center; padding: 2rem 0 1rem 0;">
+            <h3>Sobre</h3>
+            <!-- 'target="_blank"' faz o link abrir em uma nova aba. 'rel="noopener noreferrer"' é uma boa prática de segurança. -->
+            <p>Desenvolvido por: <a href="https://github.com/ArthurMaurity" target="_blank" rel="noopener noreferrer">Arthur Maurity</a></p>
+        </div>
+        <div class="copyright" style="text-align: center; padding-bottom: 1rem;">
+            <p>&copy; 2025 Maurinvest</p>
+            <!-- '&copy;' é o código HTML para o símbolo de copyright (©). -->
+        </div>
+    </footer>
+</body>
+</html>
