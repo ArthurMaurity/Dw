@@ -1,0 +1,245 @@
+:root {
+    /* Define variáveis de cores e fontes para serem usadas em todo o site. Facilita a manutenção do design. */
+    --primary-color: #003366;
+    --secondary-color: #007bff;
+    --accent-color: #f0ad4e;
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+    --light-text-color: #fff;
+    --border-color: #ddd;
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Lato', sans-serif;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    /* Uma regra fundamental: garante que o padding e a borda não aumentem a largura total dos elementos. */
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: var(--font-secondary); 
+    background-color: var(--bg-color); 
+    color: var(--text-color); 
+    line-height: 1.6; 
+}
+
+.container { 
+    /* Cria uma caixa de conteúdo centralizada que se adapta ao tamanho da tela. */
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+h1, h2, h3 { 
+    font-family: var(--font-primary); 
+    color: var(--primary-color); 
+    margin-bottom: 1rem; 
+}
+
+header { 
+    background-color: var(--primary-color); 
+    color: var(--light-text-color); 
+    padding: 1rem 0; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+.header-container {
+    /* Usa Flexbox para alinhar o título à esquerda e a navegação à direita. */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Alinha os itens da lista (links) horizontalmente. */
+}
+
+header nav li {
+    margin-left: 20px;
+}
+
+header nav a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s; /* Animação suave na troca de cor. */
+}
+
+header nav a:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+main { 
+    padding: 2rem 0; 
+}
+
+section {
+    background: #fff;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* --- ESTILOS PARA OS SLIDES --- */
+.slide {
+    /* Por padrão, esconde todos os slides. O JavaScript controla qual deles fica visível. */
+    display: none;
+    padding: 1rem 0;
+}
+
+.slide.active {
+    /* Esta classe, que é adicionada pelo JavaScript, torna o slide atual visível. */
+    display: block;
+}
+
+.form-group {
+    /* Cria um espaçamento entre cada grupo de perguntas na página 2. */
+    margin-bottom: 1.5rem;
+}
+
+.slide label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.slide input[type="text"],
+.slide input[type="number"],
+.slide select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+    background-color: #fff;
+}
+
+.options-vertical label {
+    /* Estilo para as opções de rádio ficarem uma embaixo da outra. */
+    font-weight: normal;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+.slide-navigation {
+    /* Usa Flexbox para alinhar os botões (Anterior, Próximo) lado a lado com espaço entre eles. */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    /* Estilo para quando um botão está desabilitado (ex: o "Anterior" no primeiro slide). */
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#finish-btn {
+    /* Cor de destaque para o botão final, para chamar mais atenção. */
+    background-color: var(--accent-color);
+}
+
+#resultado-texto span {
+    /* Destaca o nome do usuário e o perfil no texto do relatório. */
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+#resultado-texto h2 {
+    /* Estilo para o valor final da projeção, deixando-o maior e com mais destaque. */
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+    font-size: 2rem;
+}
+
+footer { 
+    padding: 1.5rem 0; 
+    margin-top: 2rem; 
+}
+
+/* --- ESTILOS DA TABELA --- */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse; /* Une as bordas das células */
+    margin: 25px 0;
+    font-size: 0.9em;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 5px 5px 0 0;
+    overflow: hidden; /* Garante que o border-radius seja aplicado nas bordas da tabela */
+}
+
+.styled-table thead tr {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    /* Cria um efeito "zebrado" na tabela, colorindo as linhas pares de cinza claro. */
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- INÍCIO DAS REGRAS DE RESPONSIVIDADE --- */
+/* O código abaixo só se aplica em telas com 768px ou mais de largura (desktops/tablets grandes). */
+@media (min-width: 768px) {
+    main {
+        /* Transforma o 'main' em um layout de duas colunas (grid) em telas grandes. */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem; /* Cria um espaço entre as colunas do grid. */
+        align-items: start; /* Alinha os itens no topo de suas células do grid. */
+    }
+
+    section {
+        /* Remove a margem extra entre as seções no layout de grid para um visual mais limpo. */
+        margin-bottom: 0;
+    }
+
+    /* Regras para fazer seções específicas ocuparem a largura total no layout de grid */
+    #relatorio-section, 
+    #dados-economicos-section, 
+    #investimentos-section {
+        grid-column: 1 / span 2; 
+    }
+}
